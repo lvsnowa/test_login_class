@@ -1,0 +1,9 @@
+test_login:
+  -
+    username: "hitheima@163.com"
+    password: "itheima"
+    hint: "登录成功"
+  -
+    username: "hitheima@163.com"
+    password: "itheima123"
+    hint: "密码错误"
