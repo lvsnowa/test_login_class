@@ -16,32 +16,32 @@ class TestLogin:
         self.driver = init_driver()
         self.login_page = LoginPage(self.driver)
 
-    @pytest.mark.skipif(True, reason="")
+    # @pytest.mark.skipif(True, reason="")
     def test_login_001(self):
         # 判断完成按钮是否可用
         assert not self.login_page.is_login_btn_enabled()
 
-    @pytest.mark.skipif(True, reason="")
+    # @pytest.mark.skipif(True, reason="")
     def test_login_002(self):
         self.login_page.input_password("xxx")
         assert not self.login_page.is_login_btn_enabled()
 
-    @pytest.mark.skipif(True, reason="")
+    # @pytest.mark.skipif(True, reason="")
     def test_login_003(self):
         self.login_page.input_username("xxx")
         assert not self.login_page.is_login_btn_enabled()
 
-    @pytest.mark.parametrize("param", analyze_with_key("test_login"))
-    def test_login(self, param):
-        print(param)
-        self.login_page.input_username(param["username"])
-        self.login_page.input_password(param["password"])
-        if self.login_page.is_login_btn_enabled():
-            self.login_page.click_login_btn()
-            self.login_page.find_toast(param["hint"])
-            assert True
-        else:
-            assert False
+    # @pytest.mark.parametrize("param", analyze_with_key("test_login"))
+    # def test_login(self, param):
+    #     print(param)
+    #     self.login_page.input_username(param["username"])
+    #     self.login_page.input_password(param["password"])
+    #     if self.login_page.is_login_btn_enabled():
+    #         self.login_page.click_login_btn()
+    #         self.login_page.find_toast(param["hint"])
+    #         assert True
+    #     else:
+    #         assert False
 
 
     # @pytest.mark.skipif(True, reason="")
